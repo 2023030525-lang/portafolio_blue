@@ -468,6 +468,27 @@ h2 {
   }
 }
 
+/* 🔗 Íconos dentro del formulario */
+.contact-form .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.contact-form .social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-form .social-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(90, 155, 232, 0.4));
+}
+
+
 
 /* =======================================================
    PIE DE PÁGINA

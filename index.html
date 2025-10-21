@@ -9,6 +9,31 @@
 </head>
 <body>
 
+  <!-- 🔹 MENÚ RESPONSIVO (SOLO MÓVIL) -->
+  <div class="menu-container">
+    <!-- Botón hamburguesa -->
+    <div class="menu-btn" id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Panel desplegable -->
+    <div class="menu-overlay" id="menu-overlay">
+      <div class="menu-content">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#certificaciones">Certificaciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- 🔹 CONTENEDOR PRINCIPAL -->
   <div class="frame">
 
@@ -17,6 +42,7 @@
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#habilidades">Habilidades</a>
       <a href="#proyectos">Proyectos</a>
+      <a href="#certificaciones">Certificaciones</a>
 
       <div class="btn-container">
         <a href="#contacto" class="btn-ghost">Contáctame</a>
@@ -24,9 +50,9 @@
 
       <!-- 🌍 Selector de idioma -->
       <div class="language-switch">
-        <a href="index.html" class="active">ES</a> |
+        <a href="index.html">ES</a> |
         <a href="index-en.html">EN</a> |
-        <a href="index-fran.html">FR</a>
+        <a href="index-fr.html">FR</a>
       </div>
     </nav>
 
@@ -56,7 +82,6 @@
       <!-- 🔹 HABILIDADES -->
       <section id="habilidades" class="section">
         <h2>Habilidades Técnicas</h2>
-
         <div class="skills-container">
 
           <!-- Lenguajes -->
@@ -95,7 +120,6 @@
       <!-- 🔹 PROYECTOS -->
       <section id="proyectos" class="section">
         <h2>Proyectos Destacados</h2>
-
         <div class="projects-container">
           <div class="project-card">
             <img src="fotos/mazbasura.png" alt="MazBasura Logo" class="project-logo">
@@ -107,6 +131,33 @@
             <img src="fotos/congeladora.png" alt="Congeladora Anaya Logo" class="project-logo">
             <h3>Congeladora Anaya</h3>
             <p>Sistema administrativo para una empresa de alimentos congelados que optimiza el control de inventarios, ventas y logística de productos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔹 CERTIFICACIONES -->
+      <section id="certificaciones" class="section">
+        <h2>Certificaciones</h2>
+
+        <div class="projects-container">
+          <!-- Certificación 1 -->
+          <div class="project-card">
+            <img src="fotos/certificado_excel.png" alt="Certificado Microsoft Excel" class="project-logo">
+            <h3>Microsoft Excel Básico</h3>
+            <p>
+              Certificación otorgada por Cursos de Excel el 25 de julio del 2022.  
+              Acredita habilidades en manejo de hojas de cálculo, fórmulas y funciones esenciales para la gestión de datos.
+            </p>
+          </div>
+
+          <!-- Certificación 2 -->
+          <div class="project-card">
+            <img src="fotos/cisco.png" alt="Certificado Cisco Networking Academy" class="project-logo">
+            <h3>CCNAv7: Introduction to Networks</h3>
+            <p>
+              Certificación emitida por Cisco Networking Academy el 14 de agosto del 2024.  
+              Acredita competencias en configuración de redes, direccionamiento IPv4/IPv6, protocolos OSI y resolución de conectividad.
+            </p>
           </div>
         </div>
       </section>
@@ -150,7 +201,13 @@
         <p>© 2025 Vanessa Alejandra Anaya Fregozo. Todos los derechos reservados.</p>
       </footer>
 
-    </div>
+    </div> <!-- Fin scroll-area -->
+  </div> <!-- Fin frame -->
+
+  <!-- 🔹 MODAL PARA CERTIFICADOS (MOVIDO FUERA DEL FRAME) -->
+  <div id="imgModal" class="modal">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Certificado ampliado">
   </div>
 
   <!-- 🔹 EFECTO DE ESCRITURA -->
@@ -172,33 +229,53 @@
           typingElement.style.borderRight = "none";
         }
       }
-
       typeWriter();
     });
   </script>
 
-  <!-- 🔹 ESTILOS ADICIONALES DEL SELECTOR DE IDIOMA -->
-  <style>
-    .language-switch {
-      font-weight: 600;
-      margin-left: 15px;
-      display: inline-block;
-    }
+  <!-- 🔹 JS: Selector de idioma -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentPage = window.location.pathname;
+      document.querySelectorAll(".language-switch a").forEach(link => {
+        if (currentPage.includes(link.getAttribute("href"))) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 
-    .language-switch a {
-      color: gray;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
+  <!-- 🔹 JS: Menú responsivo -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const closeBtn = document.getElementById('close-btn');
 
-    .language-switch a:hover {
-      opacity: 0.7;
-    }
+    menuBtn.addEventListener('click', () => menuOverlay.classList.toggle('open'));
+    closeBtn.addEventListener('click', () => menuOverlay.classList.remove('open'));
+    document.querySelectorAll('#menu-overlay a').forEach(link => {
+      link.addEventListener('click', () => menuOverlay.classList.remove('open'));
+    });
+  </script>
 
-    .language-switch a.active {
-      text-decoration: underline;
-    }
-  </style>
+  <!-- 🔹 SCRIPT DEL MODAL -->
+  <script>
+    document.querySelectorAll('#certificaciones .project-logo').forEach(img => {
+      img.addEventListener('click', () => {
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImage');
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('imgModal');
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>

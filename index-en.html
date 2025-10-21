@@ -3,49 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vanessa Anaya Portfolio</title>
+  <title>Portfolio Vanessa Anaya</title>
   <link rel="stylesheet" href="estilos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- 🔹 MOBILE MENU -->
+  <div class="menu-container">
+    <div class="menu-btn" id="menu-btn">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu-overlay" id="menu-overlay">
+      <div class="menu-content">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+          <li><a href="#inicio">Home</a></li>
+          <li><a href="#sobre-mi">About me</a></li>
+          <li><a href="#habilidades">Skills</a></li>
+          <li><a href="#proyectos">Projects</a></li>
+          <li><a href="#certificaciones">Certificates</a></li>
+          <li><a href="#contacto">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- 🔹 MAIN CONTAINER -->
   <div class="frame">
 
-    <!-- 🔹 NAVIGATION MENU -->
+    <!-- 🔹 NAVBAR -->
     <nav class="nav">
-      <a href="#about-me">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#sobre-mi">About me</a>
+      <a href="#habilidades">Skills</a>
+      <a href="#proyectos">Projects</a>
+      <a href="#certificaciones">Certificates</a>
 
       <div class="btn-container">
-        <a href="#contact" class="btn-ghost">Contact Me</a>
+        <a href="#contacto" class="btn-ghost">Contact me</a>
       </div>
 
-      <!-- 🌍 Language Switch -->
       <div class="language-switch">
-        <a href="index.html" class="active">ES</a> |
+        <a href="index.html">ES</a> |
         <a href="index-en.html">EN</a> |
-        <a href="index-fran.html">FR</a>
+        <a href="index-fr.html">FR</a>
       </div>
     </nav>
 
-    <!-- 🔹 SCROLL AREA -->
     <div class="scroll-area">
 
-      <!-- 🔹 HERO / INTRO -->
-      <section id="start" class="hero">
+      <!-- 🔹 HERO -->
+      <section id="inicio" class="hero">
         <div class="hero-content">
-          <img src="fotos/logo_conejo.png" alt="Portfolio Logo" class="hero-logo" />
-          <h1>Hi, I'm Vanessa Alejandra Anaya Fregozo</h1>
+          <img src="fotos/logo_conejo.png" alt="Portfolio logo" class="hero-logo" />
+          <h1>Hello, I’m Vanessa Alejandra Anaya Fregozo</h1>
           <p>Front-End Developer.</p>
-          <a href="#projects" class="btn">See my work</a>
+          <a href="#proyectos" class="btn">See my work</a>
         </div>
       </section>
 
-      <!-- 🔹 ABOUT ME -->
-      <section id="about-me" class="section">
-        <h2>About Me</h2>
+      <!-- 🔹 ABOUT -->
+      <section id="sobre-mi" class="section">
+        <h2>About me</h2>
         <div class="sobre-mi-contenido">
           <img src="fotos/foto_curriculum.png" alt="Professional photo" class="foto-perfil">
           <p class="typing-text"></p>
@@ -54,12 +73,10 @@
       </section>
 
       <!-- 🔹 SKILLS -->
-      <section id="skills" class="section">
+      <section id="habilidades" class="section">
         <h2>Technical Skills</h2>
-
         <div class="skills-container">
 
-          <!-- Languages -->
           <div class="skill-card">
             <h3>Languages</h3>
             <div class="skill-logos">
@@ -70,7 +87,6 @@
             </div>
           </div>
 
-          <!-- Frameworks -->
           <div class="skill-card">
             <h3>Frameworks</h3>
             <div class="skill-logos">
@@ -80,7 +96,6 @@
             </div>
           </div>
 
-          <!-- Tools -->
           <div class="skill-card">
             <h3>Tools</h3>
             <div class="skill-logos">
@@ -93,46 +108,55 @@
       </section>
 
       <!-- 🔹 PROJECTS -->
-      <section id="projects" class="section">
+      <section id="proyectos" class="section">
         <h2>Featured Projects</h2>
-
         <div class="projects-container">
           <div class="project-card">
             <img src="fotos/mazbasura.png" alt="MazBasura Logo" class="project-logo">
             <h3>MazBasura</h3>
-            <p>Web application focused on improving waste collection management in Mazatlán. It allows users to view routes, schedules, and report issues.</p>
+            <p>Web application focused on improving waste collection management in Mazatlán. It allows users to visualize routes, schedules, and report issues.</p>
           </div>
 
           <div class="project-card">
             <img src="fotos/congeladora.png" alt="Congeladora Anaya Logo" class="project-logo">
             <h3>Congeladora Anaya</h3>
-            <p>Administrative system for a frozen food company that optimizes inventory control, sales, and logistics processes.</p>
+            <p>Administrative system for a frozen food company that optimizes inventory, sales, and logistics management.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔹 CERTIFICATES -->
+      <section id="certificaciones" class="section">
+        <h2>Certificates</h2>
+        <div class="projects-container">
+          <div class="project-card">
+            <img src="fotos/certificado_excel.png" alt="Microsoft Excel Certificate" class="project-logo">
+            <h3>Microsoft Excel Basic</h3>
+            <p>Certificate awarded by <strong>Cursos de Excel</strong> on <strong>July 25th, 2022</strong>. Demonstrates proficiency in spreadsheets, formulas, and data management.</p>
+          </div>
+
+          <div class="project-card">
+            <img src="fotos/cisco.png" alt="Cisco Networking Academy Certificate" class="project-logo">
+            <h3>CCNAv7: Introduction to Networks</h3>
+            <p>Issued by <strong>Cisco Networking Academy</strong> on <strong>August 14th, 2024</strong>. Validates skills in network configuration, IPv4/IPv6 addressing, and connectivity troubleshooting.</p>
           </div>
         </div>
       </section>
 
       <!-- 🔹 CONTACT -->
-      <section id="contact" class="contacto">
-        <h2>Contact Me</h2>
+      <section id="contacto" class="contacto">
+        <h2>Contact me</h2>
         <div class="contact-container">
-
-          <!-- 🐇 Image -->
           <div class="contact-image">
-            <img src="fotos/contactame.png" alt="Bunny with flower" />
+            <img src="fotos/contactame.png" alt="Rabbit with flower" />
           </div>
-
-          <!-- Form -->
           <form class="contact-form" action="https://formspree.io/f/mwprjobv" method="POST">
             <input type="text" name="nombre" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="mensaje" placeholder="Message" required></textarea>
-
             <input type="hidden" name="_subject" value="New message from your portfolio 💌">
-            <input type="hidden" name="_replyto">
+            <button type="submit" class="btn">Send message</button>
 
-            <button type="submit" class="btn">Send Message</button>
-
-            <!-- 🔗 Social links -->
             <div class="social-links">
               <a href="https://www.linkedin.com/in/vanessa-anaya-a5164238b/" target="_blank">
                 <img src="fotos/linkedin.svg" alt="LinkedIn" class="social-icon linkedin">
@@ -145,7 +169,6 @@
         </div>
       </section>
 
-      <!-- 🔹 FOOTER -->
       <footer>
         <p>© 2025 Vanessa Alejandra Anaya Fregozo. All rights reserved.</p>
       </footer>
@@ -153,52 +176,27 @@
     </div>
   </div>
 
-  <!-- 🔹 TYPING EFFECT -->
+  <!-- 🔹 MODAL -->
+  <div id="imgModal" class="modal">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Enlarged certificate">
+  </div>
+
+  <!-- 🔹 JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const text = 
-      `Hi, I'm Vanessa Alejandra Anaya Fregozo, an Information Technology Engineering student at the Polytechnic University of Sinaloa. 
-       I specialize in Front-End development and enjoy combining logic and creativity to design modern, functional interfaces.`;
-
-      const typingElement = document.querySelector(".typing-text");
-      let i = 0;
-
-      function typeWriter() {
-        if (i < text.length) {
-          typingElement.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, 35);
-        } else {
-          typingElement.style.borderRight = "none";
-        }
-      }
-
-      typeWriter();
+    document.querySelectorAll('#certificaciones .project-logo').forEach(img => {
+      img.addEventListener('click', () => {
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImage');
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
     });
+
+    const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('imgModal');
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   </script>
-
-  <!-- 🔹 LANGUAGE SWITCH STYLE -->
-  <style>
-    .language-switch {
-      font-weight: 600;
-      margin-left: 15px;
-      display: inline-block;
-    }
-
-    .language-switch a {
-      color: gray;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .language-switch a:hover {
-      opacity: 0.7;
-    }
-
-    .language-switch a.active {
-      text-decoration: underline;
-    }
-  </style>
-
 </body>
 </html>
